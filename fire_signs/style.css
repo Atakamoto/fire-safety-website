@@ -37,3 +37,23 @@ body {
   .risk-low {
     border-top: 5px solid #2ecc71;
   }
+
+  nav {
+    background: #224422;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+  background: #336633;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
