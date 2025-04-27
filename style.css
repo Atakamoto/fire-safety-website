@@ -77,3 +77,16 @@ footer {
 }
 
 
+
+
+  .map-preview {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease; /* Add smooth transition */
+  }
+  
+  .map-preview:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+  }
