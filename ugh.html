@@ -1,0 +1,58 @@
+<header>
+    <h1>RanchSafe</h1>
+    <p>Protect Your Land, Livestock, and Legacy from Wildfire</p>
+  </header>
+  
+  <style>
+    /* General header styling */
+    header {
+      background-color: #FF4500;  /* Fiery orange background */
+      padding: 50px;
+      text-align: center;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      font-family: 'Arial', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    /* Title (with fire-like animation effect) */
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      animation: fireGlow 3s ease-in-out infinite;
+    }
+  
+    /* Subtitle */
+    p {
+      font-size: 1.5rem;
+      font-style: italic;
+      opacity: 0.8;
+      animation: fadeIn 2s ease-in-out 0.5s forwards;
+    }
+  
+    /* Fire glow animation for the header */
+    @keyframes fireGlow {
+      0% {
+        text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 15px #FF4500;
+      }
+      50% {
+        text-shadow: 0 0 20px #FF6347, 0 0 30px #FF6347, 0 0 40px #FF6347;
+      }
+      100% {
+        text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 15px #FF4500;
+      }
+    }
+  
+    /* Fade-in animation for paragraph */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
