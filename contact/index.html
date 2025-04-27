@@ -21,10 +21,74 @@
     <section class="resources">
       <h2>Helpful Links</h2>
       <ul>
-        <li><a href="https://www.sonomavalleyfire.org/" target="_blank">Sonoma Valley Fire District (Non-Emergency Line: (707) 996-2102)</a></li>
+        <li><a href="https://www.watchduty.org/" target="_blank">Watch Duty - Real-Time Wildfire Alerts</a></li>
+        <li><a href="https://www.fire.ca.gov/" target="_blank">Cal Fire - California State Fire Authority</a></li>
+        <li><a href="https://www.readyforwildfire.org/" target="_blank">Ready for Wildfire - Wildfire Preparedness Tips</a></li>
+        <li><a href="https://alertcalifornia.org/" target="_blank">Alert California - Live Wildfire Cameras</a></li>
+        <li><a href="https://www.nixle.com/" target="_blank">Nixle - Emergency Alerts for Your Area</a></li>
         <li><a href="https://www.facebook.com/groups/sonomafiresafety" target="_blank">Join Our Facebook Fire Safety Group</a></li>
       </ul>
     </section>
+
+    <section class="zip-lookup">
+        <h2>Find Your Local Fire Department (Non-Emergency)</h2>
+        <form id="zipForm">
+          <label for="zip">Enter Your ZIP Code:</label><br>
+          <input type="text" id="zip" name="zip" required maxlength="5" pattern="[0-9]{5}"><br><br>
+          <button type="submit" class="button">Find Number</button>
+        </form>
+        <p id="result" style="margin-top: 1rem; font-weight: bold;"></p>
+      </section>
+      <script>
+        const zipDatabase = {
+            // Sonoma/Napa Area
+            "95476": { number: "(707) 996-2102", region: "Sonoma" },
+            "94558": { number: "(707) 253-0911", region: "Napa" },
+            "95404": { number: "(707) 576-1365", region: "Santa Rosa" },
+            "94515": { number: "(707) 942-0642", region: "Calistoga" },
+            "95492": { number: "(707) 431-3360", region: "Healdsburg" },
+
+            // Major Cities California
+            "90001": { number: "(213) 978-3800", region: "Los Angeles" },
+            "94102": { number: "(415) 558-3200", region: "San Francisco" },
+            "92101": { number: "(619) 533-4300", region: "San Diego" },
+            "95814": { number: "(916) 808-1300", region: "Sacramento" },
+            "94607": { number: "(510) 444-1616", region: "Oakland" },
+            "95112": { number: "(408) 277-8950", region: "San Jose" },
+            "93721": { number: "(559) 621-4181", region: "Fresno" },
+            "90802": { number: "(562) 570-2500", region: "Long Beach" },
+            "93301": { number: "(661) 326-3911", region: "Bakersfield" },
+            "92805": { number: "(714) 765-4000", region: "Anaheim" },
+            "92501": { number: "(951) 826-5321", region: "Riverside" },
+            "95202": { number: "(209) 937-8800", region: "Stockton" },
+            "94536": { number: "(510) 494-4800", region: "Fremont" },
+            "92701": { number: "(714) 647-5700", region: "Santa Ana" },
+            "95616": { number: "(530) 757-5684", region: "Davis" },
+            "95376": { number: "(209) 831-6700", region: "Tracy" },
+            "93001": { number: "(805) 339-4300", region: "Ventura" },
+            "91710": { number: "(909) 902-5260", region: "Chino" },
+            "91910": { number: "(619) 409-5800", region: "Chula Vista" },
+            "94086": { number: "(408) 730-7212", region: "Sunnyvale" },
+            };
+      
+            document.getElementById('zipForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // stop form from refreshing page
+                const zip = document.getElementById('zip').value;
+                const resultElement = document.getElementById('result');
+
+                if (zipDatabase[zip]) {
+                    const entry = zipDatabase[zip];
+                    resultElement.innerHTML = `Non-Emergency Number (${entry.region}): <a href="tel:${entry.number.replace(/\D/g,'')}" style="color:#224422;">${entry.number}</a>`;
+                } else {
+                    resultElement.textContent = "Sorry, no non-emergency number found for that ZIP code.";
+                }
+            });
+      </script>
+
+    <section class="emergency">
+        <h2>Emergency?</h2>
+        <p><strong>If this is a real emergency, call <span style="color:red;">911</span> immediately.</strong></p>
+      </section>
 
     <section class="subscribe">
       <h2>Subscribe to Our Fire Safety Updates</h2>
