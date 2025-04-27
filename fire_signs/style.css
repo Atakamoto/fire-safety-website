@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background-image: url('../image/th-2.jpg');
+  background-image: url('../image/th-2.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -15,8 +15,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 40px;
+    margin-top: 40px;
   }
   .card {
     background-color: #fff;
